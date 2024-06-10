@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh)
+}
+
+@font-face {
+    font-family: LT_f;
+    src: url(../fonts/LT\ Sonoma\ 2.otf);
+}
+
+@font-face {
+    font-family: Make_f;
+    src: url(../fonts/LTMakeup-Regular.otf);
+}
+
+body {
+    background-color: #010101;
+    font-family: Make_f, sans-serif;
+    line-height: 1.55;
+    color: white;
+}
+
+.main-header {
+    position: relative;
+}
+
+.layers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.layers__base {
+    transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+    z-index: 0;
+}
+
+.layers__middle {
+    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+    z-index: 2;
+}
+
+.layers__front {
+    transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+    z-index: 2;
+}
+
+.layer__header {
+    margin-left: calc(var(--index) * 2.5);
+    z-index: 1;
+    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+    text-transform: uppercase;
+    will-change: transform;
+    font-weight: 900;
+    color: rgb(251, 255, 192);
+    text-shadow: 0 0 15px rgb(251, 255, 192);
+}
+
+.layer__title {
+    font-size: calc(var(--index) * 2.5);
+    letter-spacing: calc(var(--index) / 2.25);
+}
+
+.layer__caption {
+    font-size: calc(var(--index) / 0.85);
+    letter-spacing: calc(var(--index) / 2.25);
+    margin-top: calc(var(--index) * -0.75);
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.main-article {
+    min-height: 100vh;
+}
