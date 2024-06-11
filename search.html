@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Gallery</title>
+    <link rel="stylesheet" href="css/search.css" />
+    <script src="js/search.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <label for="nickname">Нікнейм:</label>
+      <span><?php echo $registered_user_nickname; ?></span>
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchBar"
+          placeholder="Search by tag..."
+          class="search-bar"
+          oninput="searchPhotos()"
+        />
+        <button class="add-photo-button" onclick="showAddPhotoForm()">
+          Search
+        </button>
+      </div>
+
+      <div class="img-container" id="imgContainer">
+        <!-- Існуючі фотографії -->
+      </div>
+
+      <div class="pop-up">
+        <span>&times;</span>
+        <img src="" alt="" />
+      </div>
+
+      <div class="add-photo-form" id="addPhotoForm">
+        <h2>Add a new photo</h2>
+        <input type="text" id="photoUrl" placeholder="Photo URL" />
+        <input
+          type="text"
+          id="photoTags"
+          placeholder="Tags (comma separated)"
+        />
+        <button onclick="addPhoto()">Add</button>
+        <button onclick="hideAddPhotoForm()">Cancel</button>
+      </div>
+    </div>
+  </body>
+</html>

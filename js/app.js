@@ -12,3 +12,22 @@ document.querySelectorAll('.img-container img').forEach(img =>{
 document.querySelector('.pop-up span').onclick = () => {
    document.querySelector('.pop-up').style.display = `none`;
 }
+
+const input = document.getElementById('user');
+const submit = document.getElementById('submit');
+
+function validate(event) {
+   event.preventDefault();
+   if(input.value !== 'Bober') { 
+     function LoginB() {
+      location.href = 'galery.html'
+     }
+     return;
+   } else {
+      function LoginB() {
+         location.href = 'reg.html'
+        }
+   }
+ }
+ 
+ submit.addEventListener('click', validate);
